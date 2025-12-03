@@ -1,0 +1,42 @@
+{
+  "timestamp": "2024-12-03T10:15:30.123Z",
+  "level": "ERROR",
+  "service": "payment-processor",
+  "message": "Failed to process payment transaction",
+  "request_id": "req_12345678",
+  "user_id": "user_9876543",
+  "transaction": {
+    "id": "txn_abc123xyz789",
+    "amount": 99.99,
+    "currency": "USD",
+    "card_token": "tok_visa_4532123456789010",
+    "billing_email": "customer@gmail.com",
+    "billing_phone": "+1-555-999-8888"
+  },
+  "payment_gateway": {
+    "name": "stripe",
+    "api_key": "sk_live_51GUDxPGO2yZ7Mk8QqR9nSmT3uVwXyZ4aAbBcCdDeEfFgHiJkLmN",
+    "endpoint": "https://api.stripe.com/v1/charges"
+  },
+  "server_info": {
+    "ip_address": "10.0.1.25",
+    "hostname": "payment-srv-03.internal",
+    "data_center": "us-east-1",
+    "config_path": "/etc/payment-service/config.json"
+  },
+  "error": {
+    "code": "insufficient_funds",
+    "message": "Insufficient funds in account",
+    "details": "The card ending in 9010 has insufficient funds"
+  },
+  "database": {
+    "connection_string": "mysql://admin:MySecure#Pass123@prod-db.internal:3306/payments",
+    "query_time": 245,
+    "affected_rows": 0
+  },
+  "stack_trace": [
+    "at PaymentProcessor.charge (/home/app/services/payment.js:456)",
+    "at Router.post (/home/app/routes/checkout.js:123)",
+    "at Layer.handle [as handle_request] (/home/app/node_modules/express/lib/router/layer.js:95)"
+  ]
+}

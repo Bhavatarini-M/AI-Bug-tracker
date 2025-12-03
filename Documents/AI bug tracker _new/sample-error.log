@@ -1,0 +1,12 @@
+2024-12-03T10:15:30.123Z ERROR: Database connection failed
+Host: 192.168.1.100
+User: admin
+Database URL: postgresql://admin:p@ssw0rd@db.example.com:5432/mydb
+File: /home/app/config/database.js
+API Key: sk_live_abc123xyz789
+Email: admin@mycompany.com
+Connection timeout after 30 seconds
+Retry attempt 3 of 5 failed
+Stack trace:
+  at DatabaseService.connect (/var/www/app/services/db.js:45:12)
+  at processTicksAndDecayingFavoritism [as _onImmediate] (internal/timers.js:9948:000)

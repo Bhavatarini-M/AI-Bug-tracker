@@ -1,0 +1,51 @@
+[FATAL] Application Crash Report
+=====================================
+Timestamp: 2024-12-03 10:15:30 UTC
+Severity: CRITICAL
+
+ERROR MESSAGE:
+Memory allocation failed: Cannot allocate 2048 MB
+Location: /var/www/app/src/services/dataProcessor.js:156
+
+USER INFO:
+Username: john.doe
+Email: john.doe@company.com
+User ID: USER_12345
+Session Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+SYSTEM INFO:
+IP Address: 192.168.1.50
+Hostname: app-server-02
+File Path: /etc/config/production.conf
+
+DATABASE CONNECTION:
+Host: db.mycompany.internal
+Port: 5432
+Username: db_admin
+Password: Secure#Pass2024!
+Connection String: postgresql://db_admin:Secure#Pass2024!@db.mycompany.internal:5432/prod_db
+
+API CREDENTIALS:
+API Key: sk_live_7YPGnCHZzR8bN3mQ2wXvK1fLpJ
+Secret Key: secret_ABC123XYZ789DEF456GHI
+Bearer Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIn0
+
+CREDIT CARD (Last Transaction):
+Card: 4532-1234-5678-9010
+Expires: 12/25
+CVV: 456
+
+PHONE CONTACTS:
+Support: +1-555-123-4567
+Emergency: +1-800-555-0123
+
+STACK TRACE:
+  at MemoryManager.allocate (/var/www/app/src/core/memory.js:89:34)
+  at DataProcessor.process (/var/www/app/src/services/dataProcessor.js:156:12)
+  at EventEmitter.emit [as process] (/var/www/app/src/index.js:45:8)
+  at processTicksAndDecayingFavoritism [as _onImmediate] (internal/timers.js:9948:000)
+
+RECOMMENDATIONS:
+1. Increase heap size allocation
+2. Optimize data processing pipeline
+3. Implement chunked processing for large datasets
